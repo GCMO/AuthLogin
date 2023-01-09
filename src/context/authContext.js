@@ -32,6 +32,6 @@ export const AuthContextProvider = ({children}) => { // children defines whateve
       {children}
     </AuthContext.Provider>
   )
-
 }
+
 

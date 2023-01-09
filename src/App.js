@@ -4,7 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Register from './pages/Register';
+import Loggedin from './pages/Loggedin';
+// import Register from './pages/Register';
 
 function App() {
   return (
@@ -14,17 +15,21 @@ function App() {
         <div className='pages'>
           <Routes>
             <Route 
-              path='/'
+              path='/Home'
               element={<Home />}
             />
             <Route 
-              path='/login' 
+              path='/' 
               element={<Login />} 
             />
-            <Route 
+            <Route
+              path='/loggedin'
+              element={<Loggedin />}
+            />
+            {/* <Route 
               path='/register' 
               element={<Register />} 
-            />
+            /> */}
           </Routes>
         </div>
       </BrowserRouter>

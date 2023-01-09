@@ -1,26 +1,34 @@
 import { useState } from 'react';
-import {useLogin} from '../hooks/useLogin';
+import { Navigate } from 'react-router-dom';
+import { useLogin } from '../hooks/useLogin';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const {login, error, isLoading} = useLogin();
 
-const handleLogin = async (e) => {
-  e.preventDefault();
-  console.log(email, password);
-  
-  await login(email, password)
-}
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    console.log(email, password);
+    
+    await login(email, password)
+    setIsLoggedIn(true);
+  }
+
+  if (isLoggedIn) {
+    return <Navigate to="/loggedin" />;
+    }
 
   return (
     <form className='login' onSubmit={handleLogin}>
+
       <h2>LOGIN FORM</h2>
       
           {/* <label htmlFor='email'> Email: </label> */}
           <input
-            // type='email'
+            type='email'
             value={email}
             placeholder='Enter email'
             onChange={(e) => setEmail(e.target.value)}
@@ -37,6 +45,6 @@ const handleLogin = async (e) => {
 
     </form>
     );
-}
+};
 
 export default Login;
