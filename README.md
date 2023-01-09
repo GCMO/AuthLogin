@@ -6,7 +6,7 @@ A) began by installing React and launched it in browser
 
 B) focused on the user interface by createing HOME, LOGIN, LOGOUT and REGISTER pages in the pages folder. Later realized the REGISTER page was not needed and commented out its contents (didn't delete the file). 
 
-    * b.1) the user can only see HOME & LOGIN. After logging in, has access to LOGGEDIN. The route to LOGGEDIN is protected by redirect. 
+    - b.1) the user can only see HOME & LOGIN. After logging in, has access to LOGGEDIN. The route to LOGGEDIN is protected by redirect. 
 
 C) created a CONTEXT folder and authContext file. It was not necessary for this kind of application, however I find it good practice to always consider the possibility of scaling the app.. Further more using Context, I can pass the user data to any other page or component and that in itself make any dev's life much better.  
 
@@ -14,9 +14,9 @@ D) created a components folder for the Navbar component.
 
 E) create a HOOKS folder to compartmentalized each pages logic and prevent having to refactor the code at the end. Each hook in this folder is provied with AuthContext so the { user } is accessible in any page. 
 
-    * e.1) useAuthContext.js - this hook is used to handle the context logic. 
-    * e.2) useLogin.js - this hook is used to handle the login logic, including JWT, which i chose to save to LocalStorage. 
-    * e.3) useLogout.js - this hook is used to handle the logout logic and removed the JWT from localStorage.
+    - e.1) useAuthContext.js - this hook is used to handle the context logic. 
+    - e.2) useLogin.js - this hook is used to handle the login logic, including JWT, which i chose to save to LocalStorage. 
+    - e.3) useLogout.js - this hook is used to handle the logout logic and removed the JWT from localStorage.
 
 F) Tests are in app.test.js ==> npm test
 
