@@ -8,19 +8,22 @@
 // });
 
 import React from 'react';
-import { shallow } from 'enzyme';
 import Login from './pages/Login';
+import { shallow, configure, mount, render } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({ adapter: new Adapter() });
 
 describe('Login Form', () => {
   it('should render a form', () => {
-    const wrapper = shallow(<Login />);
+    const wrapper = shallow(<form />);
     expect(wrapper.find('form').length).toBe(1);
   });
 
   it('should render two input fields and a submit button', () => {
     const wrapper = shallow(<form />);
     expect(wrapper.find('input').length).toBe(2);
-    expect(wrapper.find('button').length).toBe(1);
+    expect(wrapper.find('button').length).toBe(1)
   });
 
   it('should update the state when the input fields are changed', () => {

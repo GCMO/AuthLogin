@@ -16,6 +16,8 @@ E) create a HOOKS folder to compartmentalized each pages logic and prevent havin
     e.2) useLogin.js - this hook is used to handle the login logic, including JWT, which i chose to save to LocalStorage. 
     e.3) useLogout.js - this hook is used to handle the logout logic and removed the JWT from localStorage.
 
+F) Tests are in app.test.js ==> npm test
+
 ## LIBRARIES USED
 React, React-router-dom, JWT-decode, enzyme
 
@@ -34,4 +36,4 @@ So, overall, I'm quite happy with this small challenge test, it gave me the oppo
 -It wasn't easy at first using Swager. For some reason, I kept getting confused with the details provided in the page and the details provided in the JSON file. I had to go back and forth a few times to make sure I was using the correct data and authorization.
 -Though the server provided what very straight forward, I found it frustrating not having access to its actual code. Somehow the uncertainty of not seeing the code, made me feel like I was or could be missing something.
 -Had to refresh my memory on how JWTs work and how to decode them.
--Full disclosure: Im not a fan of testing. It's tedious and often quite unnecessary, specially on the frontend. I mean... if you see it working in the browser: do you really have to write tests to re-prove that it works? I know it's a good practice and down the line it could prevent bugs from arising, still not a fan.
+-Full disclosure: Im not a fan of testing, specially on the frontend. I know it's a good practice and down the line it could prevent bugs from arising and... if you see it working in the browser: do you really have to write tests to re-prove that it works?
